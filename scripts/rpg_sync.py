@@ -15,7 +15,10 @@ def git(*args, check=True):
 def read(path): return json.loads(path.read_text(encoding='utf-8-sig'))
 def write(path,obj):
     path.parent.mkdir(parents=True,exist_ok=True)
-    temp=path.with_name(path.name+'.tmp'); temp.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n',encoding='utf-8'); os.replace(temp,path)
+    temp=path.with_name(path.name+'.tmp')
+    with temp.open('w',encoding='utf-8') as f:
+        f.write(json.dumps(obj,ensure_ascii=False,indent=2)+'\n');f.flush();os.fsync(f.fileno())
+    os.replace(temp,path)
 def state(): return read(ROOT/'rpg/state.json')
 def stamp(): return datetime.datetime.now(datetime.timezone.utc).isoformat()
 def head(): return git('rev-parse','HEAD')
@@ -54,13 +57,20 @@ def validate(base=None):
     if len(ids)!=len(set(ids)): raise RuntimeError('Duplicate turn IDs in campaign log.')
     if base:
         old=json.loads(git('show',base+':rpg/state.json')); delta=chapter-old['chapter']
-        if delta not in (0,1):raise RuntimeError('Chapter jump/regression; expected same technical state or exactly one new chapter.')
+        for name in git('diff','--name-only',base,'--','rpg/turn_journal').splitlines():
+            if delta==0 or git('cat-file','-e',base+':'+name,check=False).returncode==0:
+                raise RuntimeError('Previously published journal modified/deleted, or journal changed without a new chapter.')
+        if delta < 0 or delta > 10:raise RuntimeError('Chapter jump/regression; at most 10 journaled chapters allowed.')
         if delta==0 and st!=old:raise RuntimeError('State changed without advancing the chapter; requires explicit correction/review, not a technical-sync commit.')
-        if delta==1:
+        if delta>0:
             receipt=read(ROOT/'sync/last-turn.json')
             if receipt['base_commit']!=git('rev-parse',base) or receipt['previous_chapter']!=old['chapter'] or receipt['chapter']!=chapter:
                 raise RuntimeError('Stale/duplicate turn: its base no longer matches the target branch. Do not merge; reconcile explicitly.')
             if old['current_time']>time:raise RuntimeError('Game time regressed.')
+            if receipt.get('journal_hashes'):
+                import rpg_batch
+                rpg_batch.validate_range(base,receipt,st)
+            elif delta!=1:raise RuntimeError('Multiple chapters require a complete durable journal.')
     privacy(git('ls-files').splitlines())
     return st
 
@@ -109,23 +119,33 @@ def publish():
     remote=fetch()
     if git('merge-base','--is-ancestor',sha,remote,check=False).returncode:raise RuntimeError('Remote verification failed; NOT synchronized.')
     write(LOCAL/'last-sync.json',{'commit':sha,'remote_head':remote,'verified_at':stamp(),'chapter':state()['chapter']})
-    MARK.unlink(); print('PUSH_VERIFIED '+sha)
+    MARK.unlink(); print('💾 Прогресс сохранён — главы '+roman(m['previous_chapter']+1)+'–'+roman(state()['chapter'])+'.')
 
-def save(chapter):
+def save(chapter, batch=None):
     if not MARK.exists():raise RuntimeError('Run start before playing; no safe base marker exists.')
     m=read(MARK)
     if m.get('saved_commit'): return publish()
-    if state()['chapter']!=chapter or chapter!=m['previous_chapter']+1:raise RuntimeError('Wrong/duplicate chapter number.')
+    count=len(batch) if batch else 1
+    if m.get('mode')=='local-batch' and not batch:raise RuntimeError('Use checkpoint for an active local batch.')
+    if state()['chapter']!=chapter or chapter!=m['previous_chapter']+count:raise RuntimeError('Wrong/duplicate chapter number.')
     if head()!=m['base_commit']:raise RuntimeError('Local HEAD changed during the turn.')
     if git('diff','--cached','--name-only'):raise RuntimeError('Index already contains staged changes; inspect before saving.')
     if fetch()!=m['base_commit']:raise RuntimeError('Remote advanced during turn. Files retained; stop and reconcile, do not overwrite.')
     changed=git('diff','--name-only').splitlines()+git('ls-files','--others','--exclude-standard').splitlines()
+    if 'sync/last-turn.json' in changed:
+        pending=read(ROOT/'sync/last-turn.json')
+        if any(pending.get(k)!=v for k,v in {'turn_id':m['turn_id'],'base_commit':m['base_commit'],'previous_chapter':m['previous_chapter'],'chapter':chapter}.items()):
+            raise RuntimeError('An unrelated publication receipt was edited; review before saving.')
+        changed=[name for name in changed if name!='sync/last-turn.json']
     if any(not p.startswith('rpg/') for p in changed):raise RuntimeError('Non-RPG edits present; review separately before saving.')
     privacy(changed)
-    write(ROOT/'sync/last-turn.json',{'turn_id':m['turn_id'],'base_commit':m['base_commit'],'previous_chapter':m['previous_chapter'],'chapter':chapter,'saved_at':stamp()})
+    receipt={'turn_id':m['turn_id'],'base_commit':m['base_commit'],'previous_chapter':m['previous_chapter'],'chapter':chapter,'saved_at':stamp()}
+    if batch:receipt['journal_hashes']=[e['hash'] for e in batch]
+    write(ROOT/'sync/last-turn.json',receipt)
     validate(m['base_commit'])
     git('add','--',*changed,'sync/last-turn.json')
-    git('commit','-m','RPG chapter '+roman(chapter)+' ('+str(chapter)+')')
+    title=('RPG chapters '+roman(m['previous_chapter']+1)+'–'+roman(chapter)) if batch else ('RPG chapter '+roman(chapter)+' ('+str(chapter)+')')
+    git('commit','-m',title)
     m['saved_commit']=head();write(MARK,m)
     try:publish()
     except RuntimeError as e:
@@ -134,7 +154,7 @@ def save(chapter):
         raise
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('action',choices=['validate','pull','start','save','publish','status']);p.add_argument('--chapter',type=int);p.add_argument('--base');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('action',choices=['validate','pull','start','save','publish','status','batch-start','record','checkpoint']);p.add_argument('--chapter',type=int);p.add_argument('--base');p.add_argument('--entry',type=pathlib.Path);p.add_argument('--durable-local',action='store_true');a=p.parse_args()
     LOCAL.mkdir(exist_ok=True)
     lock=LOCAL/'sync.lock'
     try: fd=os.open(lock,os.O_CREAT|os.O_EXCL|os.O_WRONLY)
@@ -148,9 +168,18 @@ def main():
             if a.chapter is None:raise RuntimeError('--chapter is required')
             save(a.chapter)
         elif a.action=='publish':publish()
+        elif a.action in ('batch-start','record','checkpoint'):
+            import rpg_batch
+            if a.action=='batch-start':rpg_batch.start(a.durable_local)
+            elif a.action=='record':
+                if not a.entry:raise RuntimeError('--entry JSON is required')
+                rpg_batch.record(a.entry)
+            else:rpg_batch.checkpoint()
         else:print(json.dumps({'head':head(),'chapter':state()['chapter'],'active_turn':MARK.exists(),'dirty':bool(git('status','--porcelain'))},ensure_ascii=False))
     finally:lock.unlink()
 
 if __name__=='__main__':
+    sys.modules['rpg_sync']=sys.modules[__name__]
+    if hasattr(sys.stdout,'reconfigure'):sys.stdout.reconfigure(encoding='utf-8')
     try:main()
     except (RuntimeError,FileNotFoundError,KeyError,ValueError) as e:print('SYNC_STOPPED: '+str(e),file=sys.stderr);sys.exit(2)

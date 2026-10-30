@@ -24,6 +24,7 @@
 !/rpg/campaign_log.md
 !/rpg/audit_and_uncertainties.md
 !/rpg/version_map.json
+!/rpg/turn_journal/
 !/rpg/stages/
 /rpg/stages/*
 !/rpg/stages/*_review.md
@@ -37,6 +38,7 @@
 **/*.zip
 **/*.bak
 **/*.log
+**/*.tmp
 **/backups/
 **/.local/
 **/.sync/
