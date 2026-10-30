@@ -1,7 +1,8 @@
 {
-  "turn_id": "a73d45fd-87b9-4ebd-8c28-576a5fb2cbf0",
-  "base_commit": "c8a8f228fbe59754a675d6a69188149edd7960a7",
-  "previous_chapter": 276,
-  "chapter": 277,
-  "saved_at": "2026-10-30T01:58:24.758082+00:00"
+  "turn_id": "batch-chapters-278-287-2026-10-30",
+  "base_commit": "61caba798ce38ce83c5629061d9e55a4c0826af6",
+  "previous_chapter": 277,
+  "chapter": 287,
+  "saved_at": "2026-10-30T04:52:47.334Z",
+  "source": "current ChatGPT conversation 278-287, player corrections canonical"
 }
