@@ -20,6 +20,8 @@ jobs:
           python-version: '3.12'
       - name: Validate current save and publication files
         run: python scripts/rpg_sync.py validate
+      - name: Test safe sync in isolated local Git repositories
+        run: python scripts/test_sync.py
       - name: Validate turn against current main
         if: github.event_name == 'pull_request'
         run: python scripts/rpg_sync.py validate --base origin/main
