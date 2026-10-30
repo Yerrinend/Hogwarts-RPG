@@ -8,7 +8,7 @@ MARK = LOCAL / 'active-turn.json'
 def git(*args, check=True):
     executable=os.environ.get('RPG_GIT') or shutil.which('git')
     if not executable: raise RuntimeError('Git unavailable; install Git or set RPG_GIT.')
-    p=subprocess.run([executable,'-C',str(ROOT),*args],capture_output=True,text=True,encoding='utf-8',errors='replace',env={**os.environ,'GIT_TERMINAL_PROMPT':'0'})
+    p=subprocess.run([executable,'-C',str(ROOT),*args],capture_output=True,text=True,encoding='utf-8',errors='replace',env={**os.environ,'GIT_TERMINAL_PROMPT':'0','GCM_INTERACTIVE':'Never'})
     if check and p.returncode: raise RuntimeError(p.stderr.strip() or p.stdout.strip() or 'Git failed')
     return p.stdout.strip() if check else p
 

@@ -1,6 +1,6 @@
 @echo off
 cd /d "%~dp0"
-powershell.exe -NoProfile -File "%~dp0scripts\sync-windows.ps1" -Action pull
+powershell.exe -NoProfile -Command "$r=Get-Content -LiteralPath '.local/runtime.json' -Raw | ConvertFrom-Json; & $r.python 'scripts/windows_entry.py' pull; exit $LASTEXITCODE"
 if errorlevel 1 (
   echo Synchronization stopped. Do not start a new RPG turn until resolved.
   pause
