@@ -73,3 +73,7 @@ M669–671: Стас намерен подарить **заколдованны�
 ## Future World Cup scene (1994)
 
 On the fourth story arc, after the Quidditch World Cup, a Death Eater attack on the campsite may leave Stas unconscious. Draca may help or protect him even if they are no longer together. This is not a reconciliation by itself. The details and what Stas witnesses are to be decided in play.
+
+### Уточнение рождественского снитча: LXXV (9 сентября)
+
+[Оригинал главы LXXV](original_chapters/user_selected_075.md) и [подробные заметки](original_chapters/reading_notes.md): Драка **видела** вместе с Панси с верхней галереи, как снитч Фреда и Джорджа летал по вестибюлю, кричал «ПОЙМАЙ МЕНЯ, ИМЕНИННИК!» и был пойман Стасом. Она сказала «Это шумно», а **Панси** сочла это милым. Драка заметила, что Стасу подарок понравился; на вопрос, что сама подарила бы ему, сразу ответила: «Хорошая книга по квиддичу». Стас **не знал**, что она наблюдала. Позже он задумал подарить ей **тот же самый** снитч на Рождество; Драка о плане не знает. Не предрешать её реакцию на сюрприз, но учитывать возможное узнавание предмета. Снитч ещё не подарен. Старые метрики не пересчитывать.
