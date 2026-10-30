@@ -1,8 +1,8 @@
 {
-  "turn_id": "batch-chapters-278-287-2026-10-30",
-  "base_commit": "61caba798ce38ce83c5629061d9e55a4c0826af6",
-  "previous_chapter": 277,
-  "chapter": 287,
-  "saved_at": "2026-10-30T04:52:47.334Z",
-  "source": "current ChatGPT conversation 278-287, player corrections canonical"
+  "turn_id": "chapter-288-current-chat",
+  "base_commit": "4af07a8b7978ac9fd876533cdb953650958d2b95",
+  "previous_chapter": 287,
+  "chapter": 288,
+  "saved_at": "2026-10-30T05:46:26.802Z",
+  "source": "Current conversation, player-selected staged-jump prank and privacy question"
 }
