@@ -75,3 +75,7 @@ M669–671: Стас намерен подарить **заколдованны�
 - Философский камень, способ усыпить/обойти охрану, скрытая роль Квиррелла и мотивы Снейпа не выдаются персонажам как уже известное.
 - Яйцо дракона и его события не переносятся в сентябрь; Мародёры/Сириус/Люпин — к третьей сюжетной части, пророчество — к своему позднему времени, Рон и Гермиона впервые целуются на седьмом году.
 - В исходном промпте допускались разные романтические линии и гарем. Это возможность игры при самостоятельности персонажей, **не приказ создать состоявшиеся связи и не отмена текущего выбора Драки**.
+
+## Future World Cup scene (1994)
+
+On the fourth story arc, after the Quidditch World Cup, a Death Eater attack on the campsite may leave Stas unconscious. Draca may help or protect him even if they are no longer together. This is not a reconciliation by itself. The details and what Stas witnesses are to be decided in play.
