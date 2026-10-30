@@ -55,6 +55,7 @@ def validate(base=None):
     if base:
         old=json.loads(git('show',base+':rpg/state.json')); delta=chapter-old['chapter']
         if delta not in (0,1):raise RuntimeError('Chapter jump/regression; expected same technical state or exactly one new chapter.')
+        if delta==0 and st!=old:raise RuntimeError('State changed without advancing the chapter; requires explicit correction/review, not a technical-sync commit.')
         if delta==1:
             receipt=read(ROOT/'sync/last-turn.json')
             if receipt['base_commit']!=git('rev-parse',base) or receipt['previous_chapter']!=old['chapter'] or receipt['chapter']!=chapter:
