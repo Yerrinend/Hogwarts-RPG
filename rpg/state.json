@@ -1,9 +1,9 @@
 {
-  "chapter": 344,
-  "chapter_start": "1991-11-10 13:14",
-  "current_time": "1991-11-10 14:04",
-  "location": "У портрета Полной Дамы снаружи гостиной Гриффиндора: Стас после отдыха, рядом Драка держит здоровую правую руку и Панси. Драка рассказала об отработке Снейпа и открытом вопросе письма Люциусу; спрашивает, наказала ли Макгонагалл Стаса, не пытался ли он взять всю вину. Стас ещё НЕ ответил.",
-  "last_player_action_message": "Глава 344 строгий порядок 2→4→5: сначала отдых в гостиной Гриффиндора; при встрече с Дракой и Панси у портрета предложил поговорить о решении Снейпа; затем пошутил себе о том, что пережил больничное крыло и кабинет Макгонагалл. Ночной проступок друзьям НЕ раскрыт.",
+  "chapter": 354,
+  "chapter_start": "1991-11-10 18:19",
+  "current_time": "1991-11-10 18:29",
+  "location": "Большой зал, стол Гриффиндора: Стас рядом с Дракой, тут Панси, Рон, Гермиона и Невилл. Макгонагалл протягивает записку от Дамблдора с предложением встретиться 11.11 вечером после разрешения Помфри и спрашивает, желает ли Стас встречи. Стас не ответил и не взял записку.",
+  "last_player_action_message": "После главы 353: 3→4→5. Стас назвал Драку «Самая красивая девушка Хогвартса», накормил её с вилки, спросил про «моя сладкая», пообещал новые красивые прозвища, поддразнил Рона. Драка съела угощение, рада и смущена. Ожидается ответ Макгонагалл.",
   "pending_player_choice": true,
   "tables": {
     "Отношения персонажей": [
@@ -16,14 +16,14 @@
       ],
       [
         "Draca",
-        "VII·49",
-        "VII·25",
-        "VIII·66",
-        "VII·85"
+        "VII·71",
+        "VII·28",
+        "VIII·83",
+        "VIII·1"
       ],
       [
         "Ron",
-        "IV·71",
+        "IV·74",
         "III·64",
         "I·0",
         "IV·27"
@@ -51,10 +51,10 @@
       ],
       [
         "Pansy",
-        "I·97",
+        "II·5",
         "III·47",
         "I·3",
-        "I·75"
+        "I·79"
       ]
     ],
     "Магические навыки Стаса": [
@@ -171,10 +171,10 @@
     ]
   },
   "match_score": "Гриффиндор 170:10 Слизерин",
-  "condition": "Левое плечо в лечебной повязке (растяжение), ушиб правого бока и колена, повторный осмотр 10.11 утром; магическая палочка при себе, матчевый снитч на тумбочке, Нимбус у команды для проверки, Букля в Совятне, семейные вещи в сейфе №789.",
-  "notes": "Quick save 344. Draca and Ellie are longtime friends, friendship affirmed 2 Nov. Do NOT depict Stas as unknown student: Boy Who Lived and known Gryffindor Seeker; after 9 Nov match especially recognizable. Quidditch 170:10, broom investigation ongoing, no culprit confirmed; Dumbledore meeting not scheduled. Stas not told Draca his punishment. Secret promised date not yet happened. Read rpg/snape_book_canon.md update 05 Nov.",
-  "checkpoint": "rpg/turn_journal/CCCXLIV.md",
-  "next_regular_save_after_chapter": 354,
+  "condition": "Левое плечо в лечебной повязке; ушибы бока и колена заживают. Осмотр Помфри понедельник 11.11 после уроков. Полёты и тренировки запрещены до разрешения. Палочка, снитч, книга Элли, рекомендации у кровати в спальне, Букля в Совятне, семейные вещи в сейфе №789. Нимбус у мадам Трюк/преподавателей для проверки; нет окончательных результатов или установленного виновника.",
+  "notes": "Плановый сейв 354: см. rpg/turn_journal/CCCLIV.md. Все первокурсники AU совершеннолетние (18 лет). Драка не дала публиковать рисунок с поля, взяла его. Элли не вручила приглашение. Снейп не решил писать Люциусу. Особенная прогулка не состоялась. Предложение Дамблдора получено через Макгонагалл, согласие Стаса ещё не дано; встреча условна после осмотра 11.11. Близнецы должны показать памятный выпуск Стасу до публикации. Стас и Драка публично обменялись угощением за ужином. Не решать дальнейшие ответы Стаса.",
+  "checkpoint": "rpg/turn_journal/CCCLIV.md",
+  "next_regular_save_after_chapter": 364,
   "house_cup": {
     "Gryffindor": 69,
     "Ravenclaw": 28,
@@ -182,18 +182,18 @@
     "Hufflepuff": 24
   },
   "discipline": {
-    "Stas": "−5 Gryffindor points (already applied), one light detention after Pomfrey medically clears him; date TBD",
-    "Draca": "One detention Wednesday 1991-11-13 19:00, sorting ingredients without magic; no Slytherin point loss; Snape has NOT yet decided whether to notify Lucius"
+    "Stas": "−5 Gryffindor points already applied and one light detention AFTER Pomfrey clearance, date TBD",
+    "Draca": "One detention Wed 1991-11-13 19:00 sorting ingredients without magic; zero Slytherin loss. Snape has NOT decided whether to write to Lucius, no letter sent"
   },
   "relations": {
     "Draca": [
-      "VII·49",
-      "VII·25",
-      "VIII·66",
-      "VII·85"
+      "VII·71",
+      "VII·28",
+      "VIII·83",
+      "VIII·1"
     ],
     "Ron": [
-      "IV·71",
+      "IV·74",
       "III·64",
       "I·0",
       "IV·27"
@@ -217,10 +217,10 @@
       "II·41"
     ],
     "Pansy": [
-      "I·97",
+      "II·5",
       "III·47",
       "I·3",
-      "I·75"
+      "I·79"
     ]
   }
 }
