@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "as_of": "chapter 460, 1991-12-19 ~20:56",
+  "purpose": "Starting confirmed knowledge only; update via verified witnessed/reported events, never inferred telepathy",
+  "facts": [
+    {
+      "id": "ellie_loves_stas",
+      "state": "CONFIRMED_PRIVATE",
+      "known_by": [
+        "Элли",
+        "Мэри"
+      ],
+      "not_known_by": [
+        "Стас"
+      ],
+      "note": "Мэри уже знает; Драка не знает всей силы чувств Элли"
+    },
+    {
+      "id": "secret_west_garden_entrance",
+      "state": "CONFIRMED_PRIVATE",
+      "known_by": [
+        "Стас",
+        "Драка"
+      ],
+      "not_known_by": [
+        "Элли",
+        "Мэри",
+        "Панси",
+        "Рон"
+      ]
+    },
+    {
+      "id": "ellie_free_dec23",
+      "state": "CONFIRMED_PRIVATE",
+      "known_by": [
+        "Элли"
+      ],
+      "not_known_by": [
+        "Стас"
+      ],
+      "note": "Свободна 23.12, ещё лично не подтвердила Стасу; время/маршрут не согласованы"
+    }
+  ],
+  "rules": [
+    "No automatic knowledge transfer from narrator-only parallel scenes",
+    "New awareness requires concrete event, time, witness/source, and reconciliation",
+    "Do not turn absent character in scene into witness",
+    "Unknown must stay unknown unless later established"
+  ]
+}
