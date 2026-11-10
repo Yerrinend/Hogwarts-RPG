@@ -1,0 +1,43 @@
+{
+  "schema_version": 2,
+  "status": "NOT_ACTIVE",
+  "scene_id": null,
+  "source": {
+    "repository": "Yerrinend/Hogwarts-RPG",
+    "base_commit": null,
+    "context_file": "rpg/intimacy_handoff/CURRENT_CONTEXT_460.md",
+    "chapter": 460,
+    "save_chapter": 454
+  },
+  "start": {
+    "date": null,
+    "time": null,
+    "location": null
+  },
+  "scene_type": null,
+  "participants": [],
+  "present_witnesses": [],
+  "possible_witnesses": [],
+  "last_confirmed_line": null,
+  "player_choices_already_made": [],
+  "pending_player_choice": null,
+  "established_context": [],
+  "possible_developments": [],
+  "occurred_events": [],
+  "privacy": {
+    "private_to": [],
+    "knowledge_constraints": []
+  },
+  "continuity_refs": [
+    "rpg/intimacy_handoff/OTHER_CHARACTERS_CURRENT_PROFILES.md",
+    "rpg/intimacy_handoff/PLAYER_CHOICE_AND_CANON_CHECK.md",
+    "rpg/intimacy_handoff/SCENE_CONTINUITY.md"
+  ],
+  "return": {
+    "terminal_reason": null,
+    "return_offered": false,
+    "summary_received": false,
+    "reconciled": false,
+    "applied_report_ids": []
+  }
+}
