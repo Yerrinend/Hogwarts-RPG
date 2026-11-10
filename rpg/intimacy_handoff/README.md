@@ -7,7 +7,8 @@
 
 ## Что открыть и в каком порядке
 1. [CURRENT_CONTEXT_460.md](CURRENT_CONTEXT_460.md) — **актуальная точка 460**; выше по актуальности, чем старый сейв 454.
-2. [SCENE_CONTINUITY.md](SCENE_CONTINUITY.md) — персонажи, секреты, обязательная проверка.
+2. **[Актуальный профиль Драки](../draca_current_personality.md)** — ключевые поздние проявления её характера, источники сцен, приоритет последнего развития над ранними установками.
+3. [SCENE_CONTINUITY.md](SCENE_CONTINUITY.md) — персонажи, секреты, обязательная проверка.
 3. [HANDOFF_STATE.md](HANDOFF_STATE.md) — шаблон конкретной остановленной сцены; сейчас не активирован.
 4. [GROK_START_PROMPT.md](GROK_START_PROMPT.md) — готовая инструкция для внешней модели.
 5. Полные первоисточники в основном репозитории: [quick_save.md](../quick_save.md), [state.json](../state.json), [canon_and_pacing_priority.md](../canon_and_pacing_priority.md), [game_rules.md](../game_rules.md), [character_canon.md](../character_canon.md), [future_plans.md](../future_plans.md), [full_timeline.md](../full_timeline.md), [relationship_history.md](../relationship_history.md), [adult_intimacy_rules.md](../adult_intimacy_rules.md), [libertinism_scale.md](../libertinism_scale.md), [stas_draca_intimacy_dialogue_history.md](../stas_draca_intimacy_dialogue_history.md), [current_stats.md](../current_stats.md), [turn_journal/CDLIV.md](../turn_journal/CDLIV.md).
