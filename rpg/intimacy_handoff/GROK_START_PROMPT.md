@@ -13,11 +13,11 @@
 3. `rpg/draca_current_personality.md` — **АКТУАЛЬНЫЙ приоритетный профиль Драки с примерами поведения из поздних сцен 305, 440–443, 457–460; не заменять старым ранним описанием**
 4. `rpg/intimacy_handoff/PLAYER_CHOICE_AND_CANON_CHECK.md` — **ОБЯЗАТЕЛЬНО**: ровно 6 вариантов на игровом стопе, строгий порядок комбинаций, «ты/твоё», запрет решать за игрока и проверка канона
 5. `rpg/intimacy_handoff/SCENE_CONTINUITY.md`
-5. `rpg/intimacy_handoff/HANDOFF_STATE.md` — **если STATUS=NOT_ACTIVE, НЕ начинай сцену**
-6. `rpg/quick_save.md`, `rpg/state.json`, `rpg/turn_journal/CDLIV.md`
-7. `rpg/canon_and_pacing_priority.md`, `rpg/game_rules.md`, `rpg/character_canon.md`
-8. `rpg/future_plans.md`, `rpg/full_timeline.md`, `rpg/relationship_history.md`, `rpg/current_stats.md`
-9. `rpg/adult_intimacy_rules.md`, `rpg/libertinism_scale.md`, `rpg/stas_draca_intimacy_dialogue_history.md`
+6. `rpg/intimacy_handoff/HANDOFF_STATE.md` — **если STATUS=NOT_ACTIVE, НЕ начинай сцену**
+7. `rpg/quick_save.md`, `rpg/state.json`, `rpg/turn_journal/CDLIV.md`
+8. `rpg/canon_and_pacing_priority.md`, `rpg/game_rules.md`, `rpg/character_canon.md`
+9. `rpg/future_plans.md`, `rpg/full_timeline.md`, `rpg/relationship_history.md`, `rpg/current_stats.md`
+10. `rpg/adult_intimacy_rules.md`, `rpg/libertinism_scale.md`, `rpg/stas_draca_intimacy_dialogue_history.md`
 
 Если не можешь реально прочитать файл, **сообщи какой именно**; попроси меня прислать его содержимое. **Не притворяйся, будто прочитал репозиторий.** Исторический `state.json` сейчас после 454; текущая сцена после 460. События 455–460 выше по хронологии и должны учитываться как сыгранные.
 
