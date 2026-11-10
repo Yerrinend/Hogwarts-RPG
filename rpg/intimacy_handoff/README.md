@@ -14,6 +14,8 @@
 5. Полные первоисточники в основном репозитории: [quick_save.md](../quick_save.md), [state.json](../state.json), [canon_and_pacing_priority.md](../canon_and_pacing_priority.md), [game_rules.md](../game_rules.md), [character_canon.md](../character_canon.md), [future_plans.md](../future_plans.md), [full_timeline.md](../full_timeline.md), [relationship_history.md](../relationship_history.md), [adult_intimacy_rules.md](../adult_intimacy_rules.md), [libertinism_scale.md](../libertinism_scale.md), [stas_draca_intimacy_dialogue_history.md](../stas_draca_intimacy_dialogue_history.md), [current_stats.md](../current_stats.md), [turn_journal/CDLIV.md](../turn_journal/CDLIV.md).
 6. По завершении: [RETURN_SUMMARY_TEMPLATE.md](RETURN_SUMMARY_TEMPLATE.md) — компактный итог событий, решений и последствий.
 
+**Новая обязательная проверка Grok:** [PLAYER_CHOICE_AND_CANON_CHECK.md](PLAYER_CHOICE_AND_CANON_CHECK.md) — второе лицо, ровно шесть игровых вариантов, собственные решения игрока, стыковка времени/места/знаний, различение концепта и канона, сохранение характера Драки.
+
 ## Процедура
 1. **Обычная RPG здесь продолжается.** При появлении подходящего эпизода ассистент может обозначить возможную точку передачи, но **не передаёт автоматически** и не решает за Стаса.
 2. По выбору игрока делается **точный снимок сцены**: файл `HANDOFF_STATE.md` с датой, минутой, местом, всеми свидетелями, точными словами последних реплик, незавершёнными решениями, актуальными отношениями, запретами на знание и соседними сюжетными арками. Снимок создаётся **до внешней сцены** и не подменяет полный сейв.
