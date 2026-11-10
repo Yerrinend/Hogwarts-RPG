@@ -12,7 +12,8 @@
 2. `rpg/intimacy_handoff/CURRENT_CONTEXT_460.md` (при будущей передаче — наиболее свежий CURRENT_CONTEXT_NNN.md)
 3. `rpg/draca_current_personality.md` — **АКТУАЛЬНЫЙ приоритетный профиль Драки с примерами поведения из поздних сцен 305, 440–443, 457–460; не заменять старым ранним описанием**
 4. `rpg/intimacy_handoff/PLAYER_CHOICE_AND_CANON_CHECK.md` — **ОБЯЗАТЕЛЬНО**: ровно 6 вариантов на игровом стопе, строгий порядок комбинаций, «ты/твоё», запрет решать за игрока и проверка канона
-5. `rpg/intimacy_handoff/SCENE_CONTINUITY.md`
+5. `rpg/intimacy_handoff/OTHER_CHARACTERS_CURRENT_PROFILES.md` — **обязательно** перед любой сценой с Элли и другими NPC: их текущая личность, свои желания, уже сыгранные события, кто что знает, без принудительной интимной эскалации
+6. `rpg/intimacy_handoff/SCENE_CONTINUITY.md`
 6. `rpg/intimacy_handoff/HANDOFF_STATE.md` — **если STATUS=NOT_ACTIVE, НЕ начинай сцену**
 7. `rpg/quick_save.md`, `rpg/state.json`, `rpg/turn_journal/CDLIV.md`
 8. `rpg/canon_and_pacing_priority.md`, `rpg/game_rules.md`, `rpg/character_canon.md`
