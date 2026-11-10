@@ -25,3 +25,6 @@ jobs:
       - name: Validate turn against current main
         if: github.event_name == 'pull_request'
         run: python scripts/rpg_sync.py validate --base origin/main
+
+      - name: Validate external-scene handoff contract
+        run: python scripts/validate_handoff.py
